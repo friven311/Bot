@@ -1,9 +1,12 @@
 require('dotenv').config()
-const telegraf = require(‘telegraf’);
+const telegrafModule = require('telegraf');
 const api = require('covid19-api');
-console.log(Telegraf, Telegraf.Markup)
+
+const Telegraf = telegrafModule.Telegraf;
+const Markup = telegrafModule.Markup;
 
 const bot = new Telegraf(process.env.botToken);
+
 bot.start((ctx) => ctx.reply(`
 Привет, ${ctx.message.from.first_name}!
 Бот для того, чтобы узнать статистику о короне.
